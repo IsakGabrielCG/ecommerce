@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +16,7 @@ return new class extends Migration
             $table->decimal('grand_total', 10, 2)->nullable();
             $table->string('payment_method')->unique();
             $table->string('payment_status')->unique();
+            // Altere o enum 'status' de 'canceled' com 1 'l' para 'cancelled' com 2 'l'
             $table->enum('status', ['new', 'processing', 'shipped', 'delivered', 'canceled'])->default('new');
             $table->string('currency')->nullable();
             $table->decimal('shippimg_amount', 10, 2)->nullable();
@@ -34,3 +34,4 @@ return new class extends Migration
         Schema::dropIfExists('orders');
     }
 };
+
