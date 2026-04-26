@@ -163,9 +163,6 @@ Algumas funcionalidades ainda podem ser melhoradas ou expandidas.
 ### 🖥️ Dashboard (Admin)
 ![Dashboard](images/dashboard.png)
 
-### 🛍️ Listagem de Produtos
-![Produtos](images/products.png)
-
 ### 🛒 Carrinho
 ![Carrinho](images/cart.png)
 
