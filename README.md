@@ -1,66 +1,194 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 E-commerce Laravel (Projeto de Estudo)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Projeto de e-commerce desenvolvido para fins de estudo utilizando **Laravel**, **Livewire** e **Filament**.
+O sistema simula funcionalidades reais de uma loja online, incluindo listagem de produtos, carrinho e checkout.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tecnologias utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* PHP (Laravel)
+* Filament (Painel administrativo)
+* Livewire
+* MySQL
+* Tailwind CSS
+* JavaScript
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Funcionalidades
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Listagem de produtos
+* Filtro por categoria e marca
+* Carrinho de compras
+* Checkout
+* Painel administrativo com Filament
+* Gerenciamento de pedidos
+* Sistema de autenticação
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Observações
 
-## Laravel Sponsors
+Este projeto foi desenvolvido com base em uma série de estudos do YouTube e posteriormente ajustado e corrigido, incluindo:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* Correções de erros em versões mais recentes do PHP (8.4)
+* Tratamento de produtos sem imagem
+* Ajustes no carrinho de compras
+* Configuração manual do ambiente e banco de dados
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Como rodar o projeto
 
-## Contributing
+### 1. Clonar o repositório
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
 
-## Code of Conduct
+### 2. Acessar a pasta
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+cd nome-do-projeto
+```
 
-## Security Vulnerabilities
+### 3. Instalar dependências do PHP
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+composer install
+```
 
-## License
+### 4. Criar o arquivo .env
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+copy .env.example .env
+```
+
+### 5. Gerar chave da aplicação
+
+```
+php artisan key:generate
+```
+
+### 6. Configurar banco de dados
+
+No arquivo `.env`, configure:
+
+```
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 7. Rodar migrations
+
+```
+php artisan migrate
+```
+
+### 8. Instalar dependências do frontend
+
+```
+npm install
+```
+
+### 9. Rodar o projeto
+
+```
+php artisan serve
+```
+
+### 10. Rodar o frontend (opcional)
+
+```
+npm run dev
+```
+
+---
+
+## Acesso ao sistema
+
+### Painel administrativo (Filament)
+
+```
+http://127.0.0.1:8000/admin
+```
+
+Email:
+
+```
+admin@gmail.com
+```
+
+Senha:
+
+> Definida no momento da criação do usuário com `php artisan make:filament-user`
+
+**Observação:**
+
+O e-mail `admin@gmail.com` foi definido no projeto como padrão para acesso ao painel administrativo (Filament).
+Isso ocorre porque existe uma regra no modelo de usuário (`canAccessPanel`) que controla quem pode acessar o painel.
+
+Esse comportamento pode ser alterado facilmente no código para permitir outros usuários.
+
+---
+
+## Configuração de e-mail
+
+Para evitar erros no envio de e-mail durante testes, configure no `.env`:
+
+```
+MAIL_MAILER=log
+```
+
+---
+
+## Observação sobre imagens
+
+O sistema permite produtos sem imagem.
+Foram feitas validações para evitar erros ao exibir ou adicionar ao carrinho.
+
+---
+
+## Status do projeto
+
+Projeto em desenvolvimento
+Algumas funcionalidades ainda podem ser melhoradas ou expandidas.
+
+---
+
+## 📷 Screenshots
+
+### 🖥️ Dashboard (Admin)
+![Dashboard](images/dashboard.png)
+
+### 🛍️ Listagem de Produtos
+![Produtos](images/products.png)
+
+### 🛒 Carrinho
+![Carrinho](images/cart.png)
+
+### 📦 Meus Pedidos
+![Pedidos](images/orders.png)
+
+### 📄 Detalhes do Pedido
+![Detalhes](images/order-details.png)
+
+### ⚙️ Gerenciamento de Produtos (Admin)
+![Admin Produtos](images/admin-products.png)
+
+
+---
+
+## Fonte de estudo
+
+Projeto baseado em uma série de vídeos do YouTube:
+
+https://www.youtube.com/watch?v=0AaOFn-n6Ho&list=PL6u82dzQtlfv8fJF3gm42TDHJdtA2NDWT
+
+---
+
+## Autor
+
+Desenvolvido por Isak Gabriel
